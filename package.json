@@ -2,7 +2,7 @@
     "name": "frontiercraft",
     "preductname": "FrontierCraft Launcher",
     "version": "1.1.0",
-    "description": "Le Launcher Officiel de FrontierCraft",
+    "description": "Launcher Officiel de FrontierCraft",
     "main": "src/app.js",
     "author": "Minegame499/Riptiaz",
     "settings": "https://frontiercraft.wstr.fr/panel",
