@@ -1,11 +1,11 @@
 {
-    "name": "Conflictura",
-    "preductname": "Conflictura Launcher",
-    "version": "2.3.0",
-    "description": "Conflictura modded server launcher",
+    "name": "frontiercraft",
+    "preductname": "FrontierCraft Launcher",
+    "version": "1.1.0",
+    "description": "Launcher Officiel de FrontierCraft",
     "main": "src/app.js",
-    "author": "Luuxis/Riptiaz",
-    "settings": "https://launcher.conflictura.site",
+    "author": "Minegame499/Riptiaz",
+    "settings": "https://frontiercraft.wstr.fr/panel",
     "engines": {
         "node": "16.x.x"
     },
@@ -34,6 +34,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Riptiaz/CentralCorp-Launcher.git"
+        "url": "git+https://github.com/Minegame499/CentralCorp-Launcher.git"
     }
 }
