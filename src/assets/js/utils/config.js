@@ -8,7 +8,7 @@ const fetch = require("node-fetch")
 const convert = require("xml-js")
 let settings_url = pkg.user ? `${pkg.settings}/${pkg.user}` : pkg.settings
 
-let config = `${settings_url}/utils/api`;
+let config = `${settings_url}/utils/api.php`;
 
 
 
