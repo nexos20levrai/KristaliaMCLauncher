@@ -173,116 +173,112 @@ class Home {
        
     }
 
+    
+
     async initLaunch() {
-        document.querySelector('.play-btn').addEventListener('click', async () => {
-            let urlpkg = pkg.user ? `${pkg.url}/${pkg.user}` : pkg.url;
-            let uuid = (await this.database.get('1234', 'accounts-selected')).value;
-            let account = (await this.database.get(uuid.selected, 'accounts')).value;
-            let ram = (await this.database.get('1234', 'ram')).value;
-            let javaPath = (await this.database.get('1234', 'java-path')).value;
-            let javaArgs = (await this.database.get('1234', 'java-args')).value;
-            let Resolution = (await this.database.get('1234', 'screen')).value;
-            let launcherSettings = (await this.database.get('1234', 'launcher')).value;
-            let screen;
+        document.querySelectorAll('.play-btn').forEach(button => {
+            button.addEventListener('click', async () => {
+                let urlpkg = pkg.user ? `${pkg.url}/${pkg.user}` : pkg.url;
+                let uuid = (await this.database.get('1234', 'accounts-selected')).value;
+                let account = (await this.database.get(uuid.selected, 'accounts')).value;
+                let ram = (await this.database.get('1234', 'ram')).value;
+                let javaPath = (await this.database.get('1234', 'java-path')).value;
+                let javaArgs = (await this.database.get('1234', 'java-args')).value;
+                let Resolution = (await this.database.get('1234', 'screen')).value;
+                let launcherSettings = (await this.database.get('1234', 'launcher')).value;
+                let screen;
+    
+                let info = document.querySelector(".play-btn")
 
-            let playBtn = document.querySelector('.play-btn');
-            let info = document.querySelector(".text-download")
-            let progressBar = document.querySelector(".progress-bar")
 
-            if (Resolution.screen.width == '<auto>') {
-                screen = false
-            } else {
-                screen = {
-                    width: Resolution.screen.width,
-                    height: Resolution.screen.height
+                info.textContent = `Vérification`
+
+                document.getElementById('btn-playee').style.backgroundImage = 'linear-gradient(145deg, var(--box-button-gradient-1) 0%, var(--box-button-gradient-2) 100%)';
+    
+                if (Resolution.screen.width == '<auto>') {
+                    screen = false
+                } else {
+                    screen = {
+                        width: Resolution.screen.width,
+                        height: Resolution.screen.height
+                    }
                 }
-            }
-
-            let opts = {
-                url: `${pkg.settings}/data`,
-                authenticator: account,
-                timeout: 10000,
-                path: `${dataDirectory}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}`,
-                version: this.config.game_version,
-                detached: launcherSettings.launcher.close === 'close-all' ? false : true,
-                downloadFileMultiple: 30,
-                loader: {
-                    type: this.config.loader.type,
-                    build: this.config.loader.build,
-                    enable: this.config.loader.enable,
-                },
-                verify: this.config.verify,
-                ignored: this.config.ignored,
-
-                java: this.config.java,
-                memory: {
-                    min: `${ram.ramMin * 1024}M`,
-                    max: `${ram.ramMax * 1024}M`
+    
+                let opts = {
+                    url: `${pkg.settings}/data`,
+                    authenticator: account,
+                    timeout: 10000,
+                    path: `${dataDirectory}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}`,
+                    version: this.config.game_version,
+                    detached: launcherSettings.launcher.close === 'close-all' ? false : true,
+                    downloadFileMultiple: 30,
+                    loader: {
+                        type: this.config.loader.type,
+                        build: this.config.loader.build,
+                        enable: this.config.loader.enable,
+                    },
+                    verify: this.config.verify,
+                    ignored: this.config.ignored,
+    
+                    java: this.config.java,
+                    memory: {
+                        min: `${ram.ramMin * 1024}M`,
+                        max: `${ram.ramMax * 1024}M`
+                    }
                 }
-            }
-
-            playBtn.style.display = "none"
-            info.style.display = "block"
-            launch.Launch(opts);
-
-            launch.on('extract', extract => {
-                console.log(extract);
+    
+                launch.Launch(opts);
+    
+                launch.on('extract', extract => {
+                    console.log(extract);
+                });
+    
+                launch.on('progress', (progress, size) => {
+                    document.querySelector(".play-btn").textContent = `Téléchargement ${((progress / size) * 100).toFixed(0)}%`
+                    ipcRenderer.send('main-window-progress', { progress, size })
+                });
+    
+                launch.on('check', (progress, size) => {
+                    document.querySelector(".play-btn").textContent = `Vérification ${((progress / size) * 100).toFixed(0)}%`
+                });
+    
+                launch.on('estimated', (time) => {
+                    let hours = Math.floor(time / 3600);
+                    let minutes = Math.floor((time - hours * 3600) / 60);
+                    let seconds = Math.floor(time - hours * 3600 - minutes * 60);
+                    console.log(`${hours}h ${minutes}m ${seconds}s`);
+                })
+    
+                launch.on('speed', (speed) => {
+                    console.log(`${(speed / 1067008).toFixed(2)} Mb/s`)
+                })
+    
+                launch.on('patch', patch => {
+                    console.log(patch);
+                    info.textContent = `Patch en cours...`
+                });
+    
+                launch.on('data', (e) => {
+                    new logger('Minecraft', '#36b030');
+                    if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
+                    ipcRenderer.send('main-window-progress-reset')
+                    info.textContent = `Demarrage en cours...`
+                    console.log(e);
+                })
+    
+                launch.on('close', code => {
+                    if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-show");
+                    info.textContent = `JOUER`
+                    document.getElementById('btn-playee').style.cssText = '';
+                    new logger('Launcher', '#7289da');
+                    console.log('Close');
+                });
+    
+                launch.on('error', err => {
+                    console.log(err);
+                });
             });
-
-            launch.on('progress', (progress, size) => {
-                progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Téléchargement ${((progress / size) * 100).toFixed(0)}%`
-                ipcRenderer.send('main-window-progress', { progress, size })
-                progressBar.value = progress;
-                progressBar.max = size;
-            });
-
-            launch.on('check', (progress, size) => {
-                progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Vérification ${((progress / size) * 100).toFixed(0)}%`
-                progressBar.value = progress;
-                progressBar.max = size;
-            });
-
-            launch.on('estimated', (time) => {
-                let hours = Math.floor(time / 3600);
-                let minutes = Math.floor((time - hours * 3600) / 60);
-                let seconds = Math.floor(time - hours * 3600 - minutes * 60);
-                console.log(`${hours}h ${minutes}m ${seconds}s`);
-            })
-
-            launch.on('speed', (speed) => {
-                console.log(`${(speed / 1067008).toFixed(2)} Mb/s`)
-            })
-
-            launch.on('patch', patch => {
-                console.log(patch);
-                info.innerHTML = `Patch en cours...`
-            });
-
-            launch.on('data', (e) => {
-                new logger('Minecraft', '#36b030');
-                if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
-                ipcRenderer.send('main-window-progress-reset')
-                progressBar.style.display = "none"
-                info.innerHTML = `Demarrage en cours...`
-                console.log(e);
-            })
-
-            launch.on('close', code => {
-                if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-show");
-                progressBar.style.display = "none"
-                info.style.display = "none"
-                playBtn.style.display = "block"
-                info.innerHTML = `Vérification`
-                new logger('Launcher', '#7289da');
-                console.log('Close');
-            });
-
-            launch.on('error', err => {
-                console.log(err);
-            });
-        })
+        });
     }
 
     async initStatusServer() {

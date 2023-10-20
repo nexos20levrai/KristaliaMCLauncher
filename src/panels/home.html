@@ -1,22 +1,10 @@
 <style class="bodyimg"></style>
+<div class="body-header">
+    <h1 class="name-big">FRONTIERCRAFT</h1>
+    <div class="play icon-play play-btn" id="play-btn">JOUER</div>
+  </div>
 <div class="home-content">
-    <div class="bottom-bar-home">
-        <div class="player-head"></div>
-        <div class="player-role"></div>
-        <div class="player-monnaie"></div>
-        <button class="settings-btn icon-settings"></button>
-        <div class="play-element">
-            <button class="play-btn">Jouer</button>
-            <div class="download-content">
-                <div class="text-download">Vérification</div>
-                <progress value="0"
-                    max="0"
-                    class="progress-bar"></progress>
-            </div>
-        </div>
-    </div>
-    <div class="body-home">
-        <div class="news-list"></div>
+    <div class="body-home-stats">
         <div class="info-list">
             <div class="info-item">
                 <div class="server">
@@ -30,6 +18,43 @@
                         <div class="online off"></div>
                     </div>
             </div>
+        </div>
+    </div>
+    <!-- <div class="bottom-bar-home">
+        <div class="player-role"></div>
+        <div class="player-monnaie"></div>
+        <div class="play-element">
+            <button class="play-btn">Jouer</button>
+            <div class="download-content">
+                <div class="text-download">Vérification</div>
+                <progress value="0"
+                    max="0"
+                    class="progress-bar"></progress>
+            </div>
+    </div>
+-->
+    </div>
+    <div class="sidebar">
+        <div class="account-side" aria-label="Connecté">
+          <img class="player-head account-side-img"/>
+          <div class="account-side-connected green"></div>
+        </div>
+        <div class="box panels">
+          <div id="home" aria-label="Accueil" class="button-active button icon-home"></div>
+          <div id="settings-btn" aria-label="Paramètres" class="settings-btn button icon-settings close"></div>
+        </div>
+        <div class="box play">
+          <div aria-label="Jouer" class="button icon-play play-btn" id ="btn-playee"></div>
+        </div>
+      </div>
+      <div id="panels">
+      </div>
+
+
+      <div class="body-home">
+        <div class="news-list"></div>
+        <div class="info-list">
+            <div class="info-item">
             <div class="info-item">
                 <div class="changelog">
                     <div class="news-header">
@@ -44,4 +69,5 @@
             </div>
         </div>
     </div>
+    
 </div>

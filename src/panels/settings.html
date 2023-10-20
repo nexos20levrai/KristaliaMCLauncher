@@ -1,11 +1,24 @@
 <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <div class="settings-content">
-    <div class="tabs-settings-btn">
-        <button style="margin-top: 40px;" class="tab-btn-css tab-btn active-tab-btn default-tab-btn"> Comptes</button>
-        <button class="tab-btn-css tab-btn">Java</button>
-        <button class="tab-btn-css tab-btn">Launcher</button>
-        <button class="tab-btn-css save-tabs-btn">Sauvegarder</button>
+</div>
+<div class="sidebar">
+    <div class="account-side" aria-label="Connecté">
+      <img class="player-head account-side-img"/>
+      <div class="account-side-connected green"></div>
     </div>
+    <div class="box panels">
+      <div id="home" aria-label="Accueil" class=" button icon-home save-tabs-btn"></div>
+      <div aria-label="Paramètres" class="button-active settings-btn button icon-settings close"></div>
+      <div aria-label="Comptes" class="settings-btn button icon-user tab-btn active-tab-btn default-tab-btn"></div>
+      <div aria-label="Java" class="settings-btn button icon-hammer tab-btn "></div>
+      <div aria-label="Launcher" class="settings-btn button icon-folder tab-btn "></div>
+    </div>
+    <div class="box play">
+      <div aria-label="Sauvegarder" class="button icon-cross save-tabs-btn1"></div>
+    </div>
+  </div>
+  <div id="panels">
+  </div>
 
     <div class="tabs-settings-content active-tab-content">
         <div class="center-align">

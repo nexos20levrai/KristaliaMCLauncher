@@ -100,3 +100,11 @@
     font-family: "Icons";
     content: "\e90a";
 }
+
+.icon-home:before { font-family: "Icons"; content: "\e904"; }
+.icon-start:before { font-family: "Icons"; content: "\e90f"; }
+.icon-play:before { font-family: "Icons"; content: "\e908"; }
+.icon-user:before { font-family: "Iconn"; content: "\e972"; }
+.icon-hammer:before { font-family: "Iconn"; content: "\ea81"; }
+.icon-cross:before { font-family: "Iconn"; content: "\ea0f"; }
+.icon-folder:before { font-family: "Iconn"; content: "\e92f"; }

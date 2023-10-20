@@ -30,6 +30,7 @@ function createWindow() {
         transparent: os.platform() === 'win32',
         frame: false,
         show: false,
+        transparent: true, 
         webPreferences: {
             contextIsolation: false,
             nodeIntegration: true

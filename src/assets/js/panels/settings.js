@@ -221,6 +221,7 @@ class Settings {
         for (let i = 0; i < TabBtn.length; i++) {
             TabBtn[i].addEventListener('click', () => {
                 if (TabBtn[i].classList.contains('save-tabs-btn')) return
+                if (TabBtn[i].classList.contains('save-tabs-btn1')) return
                 for (let j = 0; j < TabBtn.length; j++) {
                     TabContent[j].classList.remove('active-tab-content');
                     TabBtn[j].classList.remove('active-tab-btn');
@@ -231,6 +232,10 @@ class Settings {
         }
 
         document.querySelector('.save-tabs-btn').addEventListener('click', () => {
+            document.querySelector('.default-tab-btn').click();
+            changePanel("home");
+        })
+        document.querySelector('.save-tabs-btn1').addEventListener('click', () => {
             document.querySelector('.default-tab-btn').click();
             changePanel("home");
         })
