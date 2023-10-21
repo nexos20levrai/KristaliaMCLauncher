@@ -310,6 +310,7 @@
     border-radius: 10px;
     transition: opacity 1s;
     opacity: .8;
+    margin-bottom: 10px;
 }
 
 .changelog:hover {

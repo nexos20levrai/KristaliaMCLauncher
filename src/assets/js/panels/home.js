@@ -112,30 +112,7 @@ class Home {
     async bkgrole () {
         let uuid = (await this.database.get('1234', 'accounts-selected')).value;
         let account = (await this.database.get(uuid.selected, 'accounts')).value;
-        
-        let blockRole = document.createElement("div");
-        if (this.config.role === true && account.user_info.role) {
-
-        blockRole.innerHTML = `
-        <div>Grade: ${account.user_info.role.name}</div>
-        `
-        document.querySelector('.player-role').appendChild(blockRole);
-        }
-        if(!account.user_info.role) {
-            document.querySelector(".player-role").style.display = "none";
-        }
-
-
-        let blockMonnaie = document.createElement("div");
-        if (this.config.money === true) {
-        blockMonnaie.innerHTML = `
-        <div>${account.user_info.monnaie} pts</div>
-        `
-        document.querySelector('.player-monnaie').appendChild(blockMonnaie);
-        }
-        if(account.user_info.monnaie === "undefined") {
-            document.querySelector(".player-monnaie").style.display = "none";
-        }
+    
         if (this.config.whitelist_activate === true) {
         if (!this.config.whitelist.includes(account.name)) {
             document.querySelector(".play-btn").style.backgroundColor = "#696969"; // Couleur de fond grise

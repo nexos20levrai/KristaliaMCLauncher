@@ -14,7 +14,7 @@
       <div aria-label="Launcher" class="settings-btn button icon-folder tab-btn "></div>
     </div>
     <div class="box play">
-      <div aria-label="Sauvegarder" class="button icon-cross save-tabs-btn1"></div>
+      <div aria-label="Sauvegarder" class="button icon-check save-tabs-btn1" style="color: green;"></div>
     </div>
   </div>
   <div id="panels">
@@ -29,7 +29,7 @@
 
     <div class="tabs-settings-content">
         <div class="settings-content-scroll">
-            <div class="title-settings">Paramètre de votre RAM.</div>
+            <div class="name-big" style="display: flex; justify-content: center; margin-bottom: 15px">Paramètre de votre RAM.</div>
             <div class="java-settings">
                 <div class="information">
                     Définition de la RAM alloué à votre jeu, une quantité plus important augmenteras les performances de votre jeu.<br> A noter qu'il faut éviter de mettre une trop grande quantité sinon cela peut provoquer des pertes de performances survos
@@ -63,8 +63,12 @@
 
     <div class="tabs-settings-content">
         <div class="center-page">
-            <div class="title-settings">Paramètre après le lancement du jeu.</div>
+            <div class="name-big" style="display: flex; justify-content: center; margin-bottom: 15px">Lancement du jeu.</div>
             <div class="java-settings">
+                <div class="information">
+                    Ici vous pouvez choisir l'interaction que le launcher a avec le jeu
+                    <br>
+                </div>
                 <div class="information">
                     <input type="checkbox" class="checkbox-settings" id="launcher-close"><label for="launcher-close"><div class="checkround"></div></label> Fermer le launcher après le lancement du jeu.</br>
                     <input type="checkbox" class="checkbox-settings" id="launcher-close-all"><label for="launcher-close-all"><div class="checkround"></div></label> Fermer le jeu si le launcher est fermé.</br>
