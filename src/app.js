@@ -75,6 +75,8 @@ ipcMain.on('start-update', () => {
     autoUpdater.downloadUpdate();
 })
 
+console.log(process.env.NODE_ENV);
+
 autoUpdater.on('update-not-available', () => {
     const updateWindow = UpdateWindow.getWindow();
     if (updateWindow) updateWindow.webContents.send('update-not-available');

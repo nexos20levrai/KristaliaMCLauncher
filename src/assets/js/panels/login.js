@@ -135,8 +135,8 @@ class Login {
             document.querySelector('.a2f-card').style.display = "none";
         })
         cancel2f.addEventListener("click", () => {
-            document.querySelector(".login-card").style.display = "block";
-            document.querySelector(".login-card-mojang").style.display = "none";
+            document.querySelector(".login-card").style.display = "none";
+            document.querySelector(".login-card-mojang").style.display = "block";
             document.querySelector('.a2f-card').style.display = "none";
             infoLogin.style.display = "none";
             mailInput.value = "";

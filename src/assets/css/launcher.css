@@ -236,6 +236,11 @@ img {
     transform: translate(0, -50%);
 }
 
+.sidebar .box.game {
+    top: 25%;
+    transform: translate(0, -50%);
+}
+
 .sidebar .box.play {
     bottom: 15px;
 }
@@ -411,6 +416,49 @@ img {
 }
 
 .account-side:hover:after {
+    margin-left: 65px;
+    opacity: 1;
+}
+
+.games {
+    position: relative;
+    margin: 7px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--box-button);
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 15px;
+    color: var(--icon-unselected);
+    cursor: pointer;
+    z-index: 2;
+    transition: color 0.05s, background-color 0.2s, background-image 0.2s, top 0.2s, left 0.2s, height 0.2s, opacity 0.2s, margin 0.2s;
+}
+
+.games:after {
+    content: attr(aria-label);
+    opacity: 0;
+    margin-left: 50px;
+    margin-top: 9px;
+    padding: 0px 20px;
+    padding-top: 5px;
+    width: max-content;
+    height: 27px;
+    font: normal normal bold 14px/21px Poppins;
+    color: var(--text);
+    background-color: var(--box-button);
+    border-radius: 16px;
+    transition: color 0.2s, opacity 0.1s, background-color 0.2s, margin-left 0.2s;
+    pointer-events: none;
+    white-space: pre;
+    display: inline-block;
+}
+
+.games:hover {
+    color: var(--icon-hover);
+    background-color: var(--box-button-hover);
+}
+
+.games:hover:after {
     margin-left: 65px;
     opacity: 1;
 }
