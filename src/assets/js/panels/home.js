@@ -5,7 +5,7 @@
 
 'use strict';
 
-import { logger, database, changePanel} from '../utils.js';
+import {database, changePanel} from '../utils.js';
 
 const { Launch, Status } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
@@ -25,6 +25,7 @@ class Home {
         this.initStatusServer();
         this.initBtn();
         this.bkgrole();
+        this.initLinks();
     }
 
     async initNews() {
@@ -236,18 +237,16 @@ class Home {
                 });
     
                 launch.on('data', (e) => {
-                    new logger('Minecraft', '#36b030');
                     if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
                     ipcRenderer.send('main-window-progress-reset')
                     info.textContent = `Demarrage en cours...`
-                    console.log(e);
+                    logger.minecraft.log(e);
                 })
     
                 launch.on('close', code => {
                     if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-show");
                     info.textContent = `JOUER`
                     document.getElementById('btn-playee').style.cssText = '';
-                    new logger('Launcher', '#7289da');
                     console.log('Close');
                 });
     
@@ -267,18 +266,28 @@ class Home {
 
         if (!serverPing.error) {
             nameServer.textContent = this.config.status.nameServer;
-            serverMs.innerHTML = `<span class="green">En ligne</span> - ${serverPing.ms}ms`;
+            serverMs.innerHTML = `<span class="green">Opérationnel</span> - ${serverPing.ms}ms`;
             online.classList.toggle("off");
             playersConnected.textContent = serverPing.playersConnect;
         } else if (serverPing.error) {
             nameServer.textContent = 'Serveur indisponible';
-            serverMs.innerHTML = `<span class="red">Hors ligne</span>`;
+            serverMs.innerHTML = `<span class="red">Fermé</span>`;
         }
     }
 
+    initLinks(){
+        let status = document.querySelector(".status");
+        status.addEventListener("click", () => {
+            require('electron').shell.openExternal("https://status.frontiercraft.fr");
+        });
+
+      }
+
     initBtn() {
-        let settings_url = pkg.user ? `${pkg.settings}/${pkg.user}` : pkg.settings
         document.querySelector('.settings-btn').addEventListener('click', () => {
+            changePanel('settings');
+        });
+        document.querySelector('.account-btn').addEventListener('click', () => {
             changePanel('settings');
         });
     }

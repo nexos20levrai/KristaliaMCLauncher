@@ -29,7 +29,8 @@ class Splash {
                 { "message": "Chargement... Le silence du numérique.", "author": "Vmbr0" },
                 { "message": "Le temps d'attente révèle le caractère.", "author": "Eth0" },
                 { "message": "La magie du chargement.", "author": "Eth0" },  
-                { "message": "Chargemeeeeeeeent", "author": "MineGame499" }
+                { "message": "Chargemeeeeeeeent", "author": "MineGame499" },
+                { "message": "Repose en Paix Alcatraz69", "author": "Tous le staff" },
             ];
             let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;

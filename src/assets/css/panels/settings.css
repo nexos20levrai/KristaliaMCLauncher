@@ -44,8 +44,8 @@
 
 .tabs-settings-content {
     position: absolute;
-    top: 47%;
-    left: 62%;
+    top: 42%;
+    left: 46%;
     transform: translate(-50%, -50%);
     width: 73%;
     height: 80%;
@@ -103,20 +103,6 @@
  *                                                                             *
  ******************************************************************************/
 
-.add-account {
-    width: 80%;
-    height: 10%;
-    border: none;
-    border-radius: 15px;
-    font: normal normal bold 30px/40px Poppins;
-    color: #D1D1D1;
-    background-color: #303030;
-    box-shadow: 1px 2px 5px #585858;
-    margin: 20px 0;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
 .accounts {
     display: contents;
     justify-content: center;
@@ -124,28 +110,26 @@
 
 .account {
     display: inline-block;
-    background: rgb(0, 167, 189);
-    box-shadow: 0 0 5px #006e47;
-    border: 4px solid #0096FF;
+    background-color: var(--box);
+    transition: background-color .2s, border .2s;
     font: normal normal bold 30px/40px Poppins;
-    width: 600px;
-    height: 100px;
+    width: 553px;
+    height: 110px;
     margin: 1% 2%;
-    border-radius: 30px;
+    border-radius: 14px;
     text-align: start;
 }
 
 .account:hover {
-    background: #064946;
-    box-shadow: 0 0 5px #006e47;
-    border: 4px solid #006e47;
+    background-color: var(--box-hover);
 }
 
 .account-image {
     position: absolute;
     border-radius: 31px;
-    height: 70px;
-    margin: 15px 20px;
+    height: 62px;
+    width: 62px;
+    margin: 23px 20px;
     pointer-events: none;
 }
 
@@ -158,6 +142,7 @@
     overflow: hidden;
     max-width: 29ch;
     pointer-events: none;
+    color: var(--text);
 }
 
 .account-uuid {
@@ -168,20 +153,23 @@
     overflow: hidden;
     max-width: 29ch;
     pointer-events: none;
+    color: var(--text);
 }
 
 .account-delete {
-    margin: -60px 510px;
-    color: #f73434;
-    font-size: 50px;
-    background: #353535c7;
-    box-shadow: 0 0 5px #353535c7;
-    width: 65px;
-    height: 65px;
-    border-radius: 100%;
+    margin: -50px 480px;
+    color: var(--account-delete);
+    font-size: 45px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
     cursor: pointer;
     text-align: center;
 }
+
+.account-delete:hover {
+    background-color: #CF442D20;
+  }
 
 .icon-account-delete-btn {
     margin: 7px 9px;
@@ -190,15 +178,11 @@
 }
 
 .active-account {
-    background: #19877c;
-    border: 4px solid #ffffff;
-    box-shadow: 0 0 5px #ffffff;
+    border: 2px solid var(--bleu);
 }
 
 .active-account:hover {
-    background: #006e47;
-    border: 4px solid #ffffff;
-    box-shadow: 0 0 5px #ffffff;
+    background-color: var(--box-hover);
 }
 
 
@@ -476,3 +460,69 @@
     display: inline-block;
     margin-right: 8px;
 }
+
+
+.panel-title {
+    display: block;
+    position: relative;
+    margin-top: 5px;
+    font: normal normal bold 30px/46px Poppins;
+    color: var(--text);
+    transition: color .2s;
+    user-select: none;
+  }
+
+
+  .description {
+    position: relative;
+    margin-top: 5px;
+    font: normal normal normal 14px/21px Poppins;
+    color: var(--text);
+    transition: color .2s;
+  }
+
+  .acc-add-text {
+    position: absolute;
+    top: 50%;
+    left: 120px;
+    transform: translate(0, -50%);
+    font: normal normal bold 24px/35px Poppins;
+    color: var(--text);
+    transition: color .2s;
+  }
+
+  .acc-add {
+    position: absolute;
+    top: 50%;
+    left: 42px;
+    transform: translate(0, -50%);
+    color: var(--text);
+    transition: color .2s;
+  }
+  .acc-add:before {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    font-size: 38px;
+  }
+
+  .accountadd {
+    position: relative;
+    display: inline-block;
+    width: 553px;
+    height: 110px;
+    background-color: var(--box);
+    border-radius: 14px;
+    transition: background-color .2s, border .2s;
+    margin-bottom: 10px;
+    margin-right: auto;
+    border: 2px solid var(--box);
+    cursor: pointer;
+  }
+  .accountadd:hover {
+    background-color: var(--box-hover);
+  }
+
+  .accountadd.active {
+    border: 2px solid var(--bleu);
+  }
