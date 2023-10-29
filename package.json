@@ -4,7 +4,7 @@
     "version": "2.0.4",
     "description": "Launcher Officiel de FrontierCraft",
     "main": "src/app.js",
-    "author": "Minegame499/Riptiaz",
+    "author": "Eth0/Minegame499/Riptiaz",
     "settings": "https://cdn.hwhost.fr/launcher/frontier/panel",
     "engines": {
         "node": "16.x.x"

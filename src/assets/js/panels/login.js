@@ -22,8 +22,6 @@ class Login {
     }
 
     getOnline() {
-        // console.log(`Initializing microsoft Panel...`)
-        // console.log(`Initializing mojang Panel...`)
         console.log(`Initializing Az Panel...`)
         this.loginMicrosoft();
         this.loginMojang();
@@ -34,8 +32,6 @@ class Login {
     }
 
     getOffline() {
-        console.log(`Initializing microsoft Panel...`)
-        console.log(`Initializing mojang Panel...`)
         console.log(`Initializing offline Panel...`)
         this.loginMicrosoft();
         this.loginOffline();

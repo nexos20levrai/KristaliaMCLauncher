@@ -22,7 +22,15 @@ class Splash {
     async startAnimation() {
         config.GetConfig().then(res => {
             let splashes = [
-                { "message": res.splash, "author": res.splash_author },
+                { "message": "Chargement en cours... Patience.", "author": "Vmbr0" },
+                { "message": "L'attente en vaut la peine.", "author": "Vmbr0" },               
+                { "message": "#On aime les chargements", "author": "Eth0" },               
+                { "message": "Dans l'attente réside la promesse.", "author": "Eth0" },
+                { "message": "Chargement... Le silence du numérique.", "author": "Vmbr0" },
+                { "message": "Le temps d'attente révèle le caractère.", "author": "Eth0" },
+                { "message": "La magie du chargement.", "author": "Eth0" },  
+                { "message": "Chargemeeeeeeeent", "author": "MineGame499" },
+                { "message": "Repose en Paix Alcatraz69", "author": "Tous le staff" },
             ];
             let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
@@ -50,7 +58,7 @@ class Splash {
             else this.checkUpdate();
         }).catch(e => {
             console.error(e);
-            return this.shutdown("Aucune connexion internet détectée,<br>veuillez réessayer ultérieurement.");
+            return this.shutdown("Pas d'accès Internet");
         })
     }
 
@@ -106,11 +114,5 @@ class Splash {
 function sleep(ms) {
     return new Promise(r => setTimeout(r, ms));
 }
-
-document.addEventListener("keydown", (e) => {
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 73 || e.keyCode == 123) {
-        ipcRenderer.send("update-window-dev-tools");
-    }
-})
 
 new Splash();

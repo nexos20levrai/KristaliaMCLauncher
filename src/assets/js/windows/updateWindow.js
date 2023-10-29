@@ -27,13 +27,12 @@ function createWindow() {
         height: 500,
         resizable: false,
         icon: `./src/assets/images/icon.${os.platform() === "win32" ? "ico" : "png"}`,
-        transparent: os.platform() === 'win32',
         frame: false,
         show: false,
-        transparent: true, 
         webPreferences: {
             contextIsolation: false,
             nodeIntegration: true,
+            webSecurity: true,
             devTools: process.env.NODE_ENV === 'dev'
         },
     });

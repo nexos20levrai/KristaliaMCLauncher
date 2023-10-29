@@ -109,3 +109,6 @@
 .icon-cross:before { font-family: "Iconn"; content: "\ea0f"; }
 .icon-folder:before { font-family: "Iconn"; content: "\e92f"; }
 .icon-check:before { font-family: "Iconn"; content: "\ea10"; }
+.icon-memory:before { font-family: "Icons"; content: "\e907"; }
+.icon-expand:before { font-family: "Icons"; content: "\e903"; }
+.icon-external-link:after { font-family: "Icons"; content: "\e910"; }
