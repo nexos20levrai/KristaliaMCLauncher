@@ -171,10 +171,10 @@ class Launcher {
             const rpc = new DiscordRPC.Client({ transport: 'ipc' });
             rpc.on('ready', () => {
                 const presence = {
-                    details: 'Dev FrontierLauncher',
-                    state: 'Check Github',
-                    largeImageKey: 'frontier',
-                    largeImageText: 'FrontierLauncher',
+                    details: 'Joue a KristaliaMC',
+                    state: 'Dans le launcher',
+                    largeImageKey: 'large',
+                    largeImageText: 'KristaliaMC',
                     smallImageKey: 'small',
                     smallImageText: this.config.rpc_small_text,
                     buttons: [
