@@ -169,7 +169,7 @@ class Home {
                 let info = document.querySelector(".play-btn")
 
 
-                info.textContent = `Vérification`
+                info.textContent = ``
 
                 document.getElementById('btn-playee').style.backgroundImage = 'linear-gradient(145deg, var(--box-button-gradient-1) 0%, var(--box-button-gradient-2) 100%)';
     
@@ -212,12 +212,10 @@ class Home {
                 });
     
                 launch.on('progress', (progress, size) => {
-                    document.querySelector(".play-btn").textContent = `Téléchargement ${((progress / size) * 100).toFixed(0)}%`
                     ipcRenderer.send('main-window-progress', { progress, size })
                 });
     
                 launch.on('check', (progress, size) => {
-                    document.querySelector(".play-btn").textContent = `Vérification ${((progress / size) * 100).toFixed(0)}%`
                 });
     
                 launch.on('estimated', (time) => {
@@ -245,7 +243,7 @@ class Home {
     
                 launch.on('close', code => {
                     if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-show");
-                    info.textContent = `JOUER`
+                    info.textContent = ``
                     document.getElementById('btn-playee').style.cssText = '';
                     console.log('Close');
                 });

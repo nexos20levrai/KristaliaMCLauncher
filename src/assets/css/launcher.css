@@ -12,8 +12,8 @@
     --box-hover: #202020;
     --box-button: #262626;
     --box-button-hover: #2E2E2E;
-    --box-button-gradient-1: 	#00FFFF;
-    --box-button-gradient-2: 	#0096FF;
+    --box-button-gradient-1: 	#ffc400;
+    --box-button-gradient-2: 	#ff5100;
     --text: #E1E1E1;
     --term: #707070;
     --term-hover: #787878;
@@ -23,9 +23,9 @@
     --mask-gradient-1: rgba(18,18,18,0);
     --mask-gradient-2: rgba(18,18,18,1);
     --news-bg: #1E1E1E;
-    --bleu: #00FFFF;
+    --bleu: #ffc400;
     --bleu-hover: #0096FF;
-    --button-text: #E1E1E1;
+    --button-text: #ff5100;
     --avatar: #242424;
     --header: #1A1A1A;
     --green: #1AC707;

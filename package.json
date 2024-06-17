@@ -1,11 +1,11 @@
 {
-    "name": "frontiercraft",
-    "preductname": "FrontierCraft Launcher",
-    "version": "2.0.5",
-    "description": "Launcher Officiel de FrontierCraft",
+    "name": "KristaliaMC",
+    "preductname": "KristaliaMC Launcher",
+    "version": "1.0.1",
+    "description": "Launcher Officiel de KristaliaMC",
     "main": "src/app.js",
-    "author": "Eth0/Minegame499/Riptiaz",
-    "settings": "https://cdn.hwhost.fr/launcher/frontier/panel",
+    "author": "KristaliaMC",
+    "settings": "https://api.launcher.kristaliamc.fr",
     "engines": {
         "node": "16.x.x"
     },
@@ -34,6 +34,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Minegame499/FrontierCraftLauncher.git"
+        "url": "git+https://github.com/nexos20levrai/KristaliaMCLauncher.git"
     }
 }
