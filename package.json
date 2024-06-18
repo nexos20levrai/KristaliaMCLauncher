@@ -1,11 +1,11 @@
 {
     "name": "KristaliaMC",
     "preductname": "KristaliaMC Launcher",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Launcher Officiel de KristaliaMC",
     "main": "src/app.js",
     "author": "KristaliaMC",
-    "settings": "https://api.launcher.kristaliamc.fr",
+    "settings": "https://cdn.kristaliamc.fr/launcher",
     "engines": {
         "node": "16.x.x"
     },

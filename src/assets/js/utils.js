@@ -33,7 +33,7 @@ function addAccount(data) {
     div.classList.add("account");
     div.id = data.uuid;
     div.innerHTML = `
-        <img class="account-image" src="${azauth}/api/skin-api/avatars/face/${data.name}/">
+        <img class="account-image" src="https://kristaliamc.fr/api/skin-api/avatars/face/${data.name}/">
         <div class="account-name">${data.name}</div>
         <div class="account-uuid" style="display: none;">${data.uuid}</div>
         <div class="account-delete"><div class="icon-account-delete icon-account-delete-btn"></div></div>

@@ -176,34 +176,34 @@ class Launcher {
                     largeImageKey: 'large',
                     largeImageText: 'KristaliaMC',
                     smallImageKey: 'small',
-                    smallImageText: this.config.rpc_small_text,
+                    smallImageText: 'Minecraft Server',
                     buttons: [
-                        { label: this.config.rpc_button1, url: this.config.rpc_button1_url },
-                        { label: this.config.rpc_button2, url: this.config.rpc_button2_url }
+                        { label: 'Site-Web', url: 'https://kristaliamc.fr/' },
+                        { label: 'Discord', url: 'https://discord.gg/RuwhweC4AG' }
                     ]
                 };
                 rpc.setActivity(presence);
             });
-            rpc.login({ clientId: this.config.rpc_id }).catch(console.error);
+            rpc.login({ clientId: '1251820479652691999' }).catch(console.error);
           } else {
-            if (this.config.rpc_activation === true) {
+             {
                 const rpc = new DiscordRPC.Client({ transport: 'ipc' });
                 rpc.on('ready', () => {
-                    const presence = {
-                        details: this.config.rpc_details,
-                        state: this.config.rpc_state,
-                        largeImageKey: 'frontier',
-                        largeImageText: this.config.rpc_large_text,
-                        smallImageKey: 'small',
-                        smallImageText: this.config.rpc_small_text,
-                        buttons: [
-                            { label: this.config.rpc_button1, url: this.config.rpc_button1_url },
-                            { label: this.config.rpc_button2, url: this.config.rpc_button2_url }
-                        ]
-                    };
+                  const presence = {
+                    details: 'Joue a KristaliaMC',
+                    state: 'Dans le launcher',
+                    largeImageKey: 'large',
+                    largeImageText: 'KristaliaMC',
+                    smallImageKey: 'small',
+                    smallImageText: 'Minecraft Server',
+                    buttons: [
+                        { label: 'Site-Web', url: 'https://kristaliamc.fr/' },
+                        { label: 'Discord', url: 'https://discord.gg/RuwhweC4AG' }
+                    ]
+                };
                     rpc.setActivity(presence);
                 });
-                rpc.login({ clientId: this.config.rpc_id }).catch(console.error);
+                rpc.login({ clientId: '1251820479652691999' }).catch(console.error);
                 }  
           }
 

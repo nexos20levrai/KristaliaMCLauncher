@@ -119,36 +119,9 @@ class Home {
             document.querySelector(".play-btn").style.backgroundColor = "#696969"; // Couleur de fond grise
             document.querySelector(".play-btn").style.pointerEvents = "none"; // Désactiver les événements de souris
             document.querySelector(".play-btn").style.boxShadow = "none";
-            document.querySelector(".play-btn").textContent = "Indisponible";        
+            document.querySelector(".play-btn").textContent = "";        
         }
     }
-        
-        if (account.user_info.role.name === this.config.role_data.role1.name) {
-            document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${this.config.role_data.role1.background}) black no-repeat center center scroll`;
-        }
-        if (account.user_info.role.name === this.config.role_data.role2.name) {
-            document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${this.config.role_data.role2.background}) black no-repeat center center scroll`;
-        }
-        if (account.user_info.role.name === this.config.role_data.role3.name) {
-            document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${this.config.role_data.role3.background}) black no-repeat center center scroll`;
-        }
-        if (account.user_info.role.name === this.config.role_data.role4.name) {
-            document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${this.config.role_data.role4.background}) black no-repeat center center scroll`;
-        }
-        if (account.user_info.role.name === this.config.role_data.role5.name) {
-            document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${this.config.role_data.role5.background}) black no-repeat center center scroll`;
-        }
-        if (account.user_info.role.name === this.config.role_data.role6.name) {
-            document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${this.config.role_data.role6.background}) black no-repeat center center scroll`;
-        }
-        if (account.user_info.role.name === this.config.role_data.role7.name) {
-            document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${this.config.role_data.role7.background}) black no-repeat center center scroll`;
-        }
-        if (account.user_info.role.name === this.config.role_data.role8.name) {
-            document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${this.config.role_data.role8.background}) black no-repeat center center scroll`;
-        }
-        
-       
     }
 
     
